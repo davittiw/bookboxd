@@ -1,7 +1,8 @@
-import Navbar from '../components/header/Navbar';
+import Navbar from '../components/Header/Navbar'
 import Inicio from '../components/Inicio';
 import BookList from '../components/Book/BookList';
 import Footer from '../components/footer/Footer';
+import React from 'react';
 
 import { motion } from 'framer-motion';
 
