@@ -114,7 +114,7 @@ export default function CardBook() {
 
         // 7. Prepare subjects (genres/categories)
         const subjects =
-          workData.subjects?.join(", ") || "No subjects available";
+          workData.subjects?.slice(0,10).join(", ") || "No subjects available";
         const subjectPeople = workData.subject_people?.join(", ") || "";
         const subjectPlaces = workData.subject_places?.join(", ") || "";
         const subjectTimes = workData.subject_times?.join(", ") || "";
@@ -265,7 +265,7 @@ export default function CardBook() {
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
       >
-        <div className="card-main-content h-auto w-full max-w-[90vw] sm:max-w-[800px] lg:max-w-5xl backdrop-blur-sm bg-black/20 border border-white/20 rounded-xl flex flex-col md:flex-row justify-center gap-5 py-5 px-5 shadow-lg">
+        <div className="mt-20 card-main-content h-auto w-full max-w-[90vw] sm:max-w-[800px] lg:max-w-5xl backdrop-blur-sm bg-black/20 border border-white/20 rounded-xl flex flex-col md:flex-row justify-center gap-5 py-5 px-5 shadow-lg">
           <button
             onClick={() => navigate(-1)}
             className="absolute z-50 top-5 md:left-3 left-100 bg-red-900/20 p-1 rounded-full text-white hover:text-purple-400 transition-colors"
@@ -342,9 +342,9 @@ export default function CardBook() {
               <h2 className="text-xl font-semibold text-white mb-2 flex items-center gap-2">
                 <Info size={20} /> Description
               </h2>
-              <p className="text-gray-300 whitespace-pre-line">
+              <p className="text-gray-300 truncate text-sm whitespace-pre-line">
                 {typeof book.description === "string"
-                  ? book.description
+                  ? book.description.replace(/[#*_`]/g, "")
                   : "No description available"}
               </p>
             </div>
