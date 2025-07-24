@@ -1,6 +1,7 @@
-import CardAbout from "../components/Card-about/CardAbout";
+import CardAbout from '../components/card-about/CardAbout'
 import Footer from "../components/footer/Footer";
-import Navbar from "../components/header/Navbar";
+import Navbar from "../components/Header/Navbar";
+import React from "react";
 
 import { motion } from 'framer-motion';
 
@@ -17,7 +18,7 @@ export default function Sobre () {
                 transition={{ duration: 1, ease: 'easeInOut' }}
             >
                 {/* Principal div in About page */}
-                    <CardAbout/>
+                <CardAbout/>
             </motion.main>
 
             <Footer/>

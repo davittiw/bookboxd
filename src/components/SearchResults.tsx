@@ -1,10 +1,15 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import Navbar from "./header/Navbar";
+
+import { motion } from "framer-motion";
+
+import Navbar from "./Header/Navbar";
 import Footer from "./footer/Footer";
+
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+
+import React from "react";
 
 interface Book {
   id: string;
