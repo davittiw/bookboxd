@@ -19,7 +19,7 @@ export default function Home() {
       >
         <div className="max-w-6xl flex flex-col items-center gap-0 md:gap-10 justify-center">
           <Inicio />
-          <BookList />
+          <BookList/>
         </div>
       </motion.main>
 

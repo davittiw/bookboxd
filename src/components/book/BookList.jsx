@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function BookList() {
+  // Removed unused books prop
   const navigate = useNavigate();
-  const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [books, setBooks] = useState([]); // Added state for books
 
   useEffect(() => {
     const fetchPopularBooks = async () => {
       try {
         setLoading(true);
-        // Fetch exactly 10 popular books from Open Library API
         const response = await fetch(
           "https://openlibrary.org/search.json?q=subject:science&sort=editions&limit=20"
         );
@@ -23,17 +23,16 @@ export default function BookList() {
 
         const data = await response.json();
 
-        // Format the books data to match our expected structure
         const formattedBooks = data.docs
-          .filter((book) => book.cover_i) // Only include books with covers
-          .slice(0, 20) // Ensure exactly 10 books
-          .map((book, index) => ({
+          .filter((book) => book.cover_i)
+          .slice(0, 20)
+          .map((book) => ({
             id: book.key.replace("/works/", ""),
             titulo: book.title,
             autor: book.author_name?.[0] || "Autor desconhecido",
             anoPublicacao: book.first_publish_year || "Ano desconhecido",
             capa: `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`,
-            avalicao: "4", // Default rating
+            avalicao: "4",
             paginas: book.number_of_pages_median || "N/A",
           }));
 

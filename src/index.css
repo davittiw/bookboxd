@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    --font-family: 'Poppins', sans-serif;
+  --font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-image: linear-gradient(to right, #1B0B26, #250A40, #6B14A6);
+  background-image: linear-gradient(to right, #1b0b26, #250a40, #6b14a6);
 }
 
 .nav-item {
-    @apply cursor-pointer hover:text-green-gradient-3 transition-colors
+  @apply cursor-pointer hover:text-green-gradient-3 transition-colors;
 }
