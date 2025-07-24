@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Navbar from "../header/Navbar";
+import Navbar from '../Header/Navbar'
 import Footer from "../footer/Footer";
-import HalfRating from "../HalfRating";
 import { motion } from "framer-motion";
+
 import {
   MoveLeft,
   BookOpenText,
@@ -258,6 +258,7 @@ export default function CardBook() {
   return (
     <>
       <Navbar />
+
       <motion.main
         className="main-content bg-gradient-to-br flex-grow from-jet via-zika to-green-gradient-2 animate-gradient w-full min-h-screen p-10 flex items-center justify-center"
         initial={{ opacity: 0, y: 20 }}
