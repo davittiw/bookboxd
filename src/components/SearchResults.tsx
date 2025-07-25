@@ -23,13 +23,22 @@ interface Book {
 
 export default function SearchResults() {
   const location = useLocation();
-  const navigate = useNavigate();
-  const books: Book[] = location.state?.searchResults ?? [];
   const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
+  const [books, setBooks] = useState<Book[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setImagesLoaded(Array(books.length).fill(false));
-  }, [books]);
+    const storedResults = localStorage.getItem("searchResults");
+    if (storedResults) {
+      try {
+        const parsedBooks: Book[] = JSON.parse(storedResults);
+        setBooks(parsedBooks);
+        setImagesLoaded(Array(parsedBooks.length).fill(false));
+      } catch (err) {
+        console.error("Erro ao ler do localStorage:", err);
+      }
+    }
+  }, []);
 
   const handleImageLoad = (i: number) =>
     setImagesLoaded((prev) => prev.map((l, idx) => (idx === i ? true : l)));

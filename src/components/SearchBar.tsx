@@ -60,8 +60,8 @@ export default function SearchBar({
         return;
       }
 
-      onSearchResults?.(booksWithCovers);
-      navigate("/search", { state: { searchResults: booksWithCovers } });
+      localStorage.setItem("searchResults", JSON.stringify(booksWithCovers));
+      navigate("/search");
     } catch (err) {
       setError("Erro ao conectar com o servidor. Tente novamente mais tarde.");
       console.error(err);
