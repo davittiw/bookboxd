@@ -11,24 +11,13 @@ const creators = [
       { type: "github", url: "https://github.com/davittiw" },
       { type: "linkedin", url: "https://www.linkedin.com/in/davttiw/" }
     ] 
-  },
-  {
-    id: 2,
-    img: "https://avatars.githubusercontent.com/u/75692511?v=4",
-    description: "Front-end Developer",
-    user: "Rahul | @krfpo",
-    socials: [
-      { type: "github", url: "https://github.com/krkfpo", },
-      { type: "linkedin", url: "" }
-    ] 
-  }
-]
+  }]
 
 
 const Conheca = () => {
   return (
     <>
-      <h1 className="w-full text-center text-3xl font-bold text-transparent bg-clip-text animate-gradient bg-gradient-to-r from-green-gradient-1 via-green-gradient-2 to-green-gradient-3">Meet the developers</h1>
+      <h1 className="w-full text-center text-3xl font-bold text-transparent bg-clip-text animate-gradient bg-gradient-to-r from-green-gradient-1 via-green-gradient-2 to-green-gradient-3">Meet the Creator</h1>
       {creators.map((creator) => (
         <div
           key={creator.id}
